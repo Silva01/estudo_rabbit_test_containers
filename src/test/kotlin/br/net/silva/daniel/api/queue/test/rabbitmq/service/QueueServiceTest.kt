@@ -18,6 +18,6 @@ class QueueServiceTest {
         val message = PeopleMessage("Hello", "Daniel", 33)
         val json = JsonConverter.convert(message)
         service.send(json)
-        verify(rabbitTemplate).convertAndSend("test.queue.api", json, "api")
+        verify(rabbitTemplate).convertAndSend("test.queue.api", "api", json)
     }
 }
