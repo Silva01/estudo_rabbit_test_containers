@@ -12,4 +12,12 @@ class JsonConverterTest {
         val json = JsonConverter.convert(message)
         assertEquals("{\"message\":\"Hello\",\"name\":\"Daniel\",\"age\":33}", json)
     }
+
+    @Test
+    fun `should convert instance object to json`() {
+        val message = PeopleMessage("Hello", "Daniel", 33)
+        val converter = JsonConverter()
+        val json = converter.convert(message)
+        assertEquals("{\"message\":\"Hello\",\"name\":\"Daniel\",\"age\":33}", json)
+    }
 }

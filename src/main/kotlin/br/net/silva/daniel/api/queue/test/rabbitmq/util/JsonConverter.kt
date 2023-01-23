@@ -8,4 +8,8 @@ class JsonConverter {
             return ObjectMapper().writeValueAsString(obj)
         }
     }
+
+    fun <T> convert(obj: T): String {
+        return ObjectMapper().writeValueAsString(obj)
+    }
 }
